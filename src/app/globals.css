@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.container {
+  @apply flex justify-center items-center min-h-screen bg-gray-100;
+}
+
+.wrapper {
+  @apply bg-white p-8 rounded-lg shadow-md w-[100%] max-w-sm;
+}
+
+.heading-text {
+  @apply text-2xl mb-3 text-center font-bold text-blue-600;
+}
+
+.subheading-text {
+  @apply text-center mb-6 text-sm text-gray-700;
+}
+
+.form-wrapper {
+  @apply space-y-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-input {
+  @apply mt-1 w-full p-2 border border-gray-300 rounded-md outline-none text-black;
+}
+
+.login-btn {
+  @apply w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700;
+}
+
+.error-text {
+  @apply text-red-500 text-sm mt-2;
+}
+
+.dashboard-container {
+  @apply flex justify-center items-center min-h-screen bg-slate-100;
+}
+
+.welcome-text {
+  @apply text-xl text-black font-bold;
+}

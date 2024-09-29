@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Multi-User Type Login System
 
-## Getting Started
+This project is a simple frontend application that demonstrates a login system for three different user types: Admin, Editor, and Viewer. Upon successful login, users are redirected to their respective dashboards based on their user roles.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Login Form**: A simple form where users can input their username and password.
+- **Role-Based Redirection**: Based on user credentials, users are redirected to:
+  - `/admin-dashboard` for Admin users
+  - `/editor-dashboard` for Editor users
+  - `/viewer-dashboard` for Viewer users
+- **Mock Data**: The login system uses hardcoded credentials for testing purposes.
+- **Routing Protection**: Users are redirected back to the login page if they attempt to access an unauthorized dashboard.
+- **Form Validation**: Basic form validation ensures that all fields are filled before attempting login.
+- **Session Handling**: The user session is persisted using `localStorage` to prevent unauthorized access after a page refresh.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: A React framework for building server-side rendered (SSR) and static web applications.
+- **TypeScript**: Strongly typed JavaScript, providing type safety and better code quality.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **React Hooks**: `useState` and `useEffect` hooks for managing component state and side effects.
+- **Next.js Router**: Used for programmatically navigating users between routes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## User Credentials
 
-## Learn More
+The following credentials can be used to test the login system:
 
-To learn more about Next.js, take a look at the following resources:
+| Role   | Username | Password   |
+|--------|----------|------------|
+| Admin  | admin    | admin123   |
+| Editor | editor   | editor123  |
+| Viewer | viewer   | viewer123  |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How to Run the Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the Repository**:
 
-## Deploy on Vercel
+    ```bash
+    git clone https://github.com/Peculiars/multi-user-login.git
+    cd multi-user-login
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install Dependencies**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Install the project dependencies using npm or yarn:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3. **Run the Development Server**:
+
+    Start the Next.js development server:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+4. **Navigate to the Application**:
+
+    - Use the login form to input any of the test credentials provided above.
+    - Upon successful login, you will be redirected to the corresponding dashboard based on the role.
